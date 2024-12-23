@@ -32,14 +32,14 @@ document.querySelector(".login-form form").addEventListener("submit", (event) =>
         localStorage.setItem("loggedInUser", JSON.stringify(user));
 
         if (user.role === "aluno") {
-            window.location.href = "/pages/turmainterna.html"; // Redireciona para a turma interna do aluno
+            window.location.href = "/turmainterna.html"; // Redireciona para a turma interna do aluno
         } else if (user.role === "catequista") {
             if (user.approved) {
-                window.location.href = "/pages/catequista.html"; // Redireciona para a área do catequista
+                window.location.href = "/catequista.html"; // Redireciona para a área do catequista
             } else {
                 alert("Seu cadastro ainda não foi aprovado. Por favor, aguarde.");
                 localStorage.removeItem("loggedInUser");
-                window.location.href = "/pages/login.html"; // Volta para a tela de login
+                window.location.href = "/Pages/login.html"; // Volta para a tela de login
             }
         } else {
             alert("Usuário ou função inválida.");
@@ -91,12 +91,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Restringir acesso às páginas específicas
     if (window.location.pathname.includes("turmainterna.html") && (!user || user.role !== "aluno")) {
         alert("Acesso restrito! Somente alunos podem acessar esta área.");
-        window.location.href = "/pages/login.html";
+        window.location.href = "/Pages/login.html";
     }
 
     if (window.location.pathname.includes("catequista.html") && (!user || user.role !== "catequista" || !user.approved)) {
         alert("Acesso restrito! Somente catequistas aprovados podem acessar esta área.");
-        window.location.href = "/pages/login.html";
+        window.location.href = "/Pages/login.html";
     }
 });
 
@@ -132,7 +132,7 @@ const logoutButton = document.getElementById("logoutButton");
 if (logoutButton) {
     logoutButton.addEventListener("click", () => {
         localStorage.removeItem("loggedInUser");
-        window.location.href = "/pages/login.html";
+        window.location.href = "/Pages/login.html";
     });
 };
 

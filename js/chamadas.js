@@ -148,6 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
     renderAttendanceHistory();
 
     backButton.addEventListener("click", () => {
-        window.location.href = "/pages/catequista.html";
+        window.location.href = "/catequista.html";
     });
 });

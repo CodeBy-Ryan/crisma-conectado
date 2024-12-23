@@ -1,15 +1,4 @@
 {
-  "rewrites": [
-    {
-      "source": "/pages/(.*)",
-      "destination": "/pages/$1"
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/index.html",
-      "permanent": true
-    }
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }

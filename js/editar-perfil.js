@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!loggedInUser) {
         alert("Acesso restrito! Faça login novamente.");
-        window.location.href = "/pages/login.html";
+        window.location.href = "/Pages/login.html";
         return;
     }
 
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!loggedInUser) {
         alert("Acesso restrito! Faça login novamente.");
-        window.location.href = "/pages/login.html";
+        window.location.href = "/Pages/login.html";
         return;
     }
 
@@ -90,12 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Redireciona com base no tipo de usuário
         if (loggedInUser.role === "catequista") {
-            window.location.href = "/pages/catequista.html";
+            window.location.href = "/catequista.html";
         } else if (loggedInUser.role === "aluno") {
-            window.location.href = "/pages/turmainterna.html";
+            window.location.href = "/turmainterna.html";
         } else {
             alert("Tipo de usuário inválido. Redirecionando para o login.");
-            window.location.href = "/pages/login.html";
+            window.location.href = "/Pages/login.html";
         }
     });
 

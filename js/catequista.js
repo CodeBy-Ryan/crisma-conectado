@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Verifica se o usuário é um catequista aprovado
     if (!loggedInUser || loggedInUser.role !== "catequista" || !loggedInUser.approved) {
         alert("Acesso restrito! Apenas catequistas aprovados podem acessar esta área.");
-        window.location.href = "login.html";
+        window.location.href = "/Pages/login.html";
         return;
     }
 
@@ -69,33 +69,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Funções dos botões
     document.getElementById("btnListaChamada").addEventListener("click", () => {
-        window.location.href = "/pages/chamadas.html";
+        window.location.href = "/Pages/chamadas.html";
     });
 
 
     document.getElementById("btnCriarEvento").addEventListener("click", () => {
-        window.location.href = "/pages/criareventos.html";
+        window.location.href = "/Pages/criareventos.html";
     });
 
     document.getElementById("btnBatePapo").addEventListener("click", () => {
-        window.location.href = "/pages/chat.html";
+        window.location.href = "/Pages/chat.html";
     });
 
     document.getElementById("btnNovaTurma").addEventListener("click", () => {
-        window.location.href = "/pages/novaturma.html";
+        window.location.href = "/Pages/novaturma.html";
     });
 
     document.getElementById("btnCadastrarGrupos").addEventListener("click", () => {
-        window.location.href = "/pages/cadastrargrupos.html";
+        window.location.href = "/Pages/cadastrargrupos.html";
     });
 
     document.getElementById("btnEditarPerfil").addEventListener("click", () => {
-        window.location.href = "/pages/editar_perfil.html";
+        window.location.href = "/Pages/editar_perfil.html";
     });
 
     // Botão de logout
     document.getElementById("logoutButton").addEventListener("click", () => {
         localStorage.removeItem("loggedInUser");
-        window.location.href = "/pages/login.html";
+        window.location.href = "/Pages/login.html";
     });
 });

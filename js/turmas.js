@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="turma-info">
                     <h2>${turma.name}</h2>
                     <p>${turma.description}</p>
-                    <a href="/pages/login.html" class="btn">Acessar Turma</a>
+                    <a href="/Pages/login.html" class="btn">Acessar Turma</a>
                 </div>
             `;
             turmasContainer.appendChild(turmaCard);

@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!loggedInUser || loggedInUser.role !== "aluno") {
         alert("Acesso restrito! Apenas alunos podem acessar esta área.");
-        window.location.href = "/pages/login.html";
+        window.location.href = "/Pages/login.html";
         return;
     }
 
@@ -61,6 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Logout
     document.getElementById("logoutButton").addEventListener("click", () => {
         localStorage.removeItem("loggedInUser");
-        window.location.href = "/pages/login.html";
+        window.location.href = "/Pages/login.html";
     });
 });

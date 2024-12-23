@@ -9,16 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // Verificar se o usuário está logado
     if (!loggedInUser) {
         alert("Acesso restrito! Faça login novamente.");
-        window.location.href = "/pages/login.html";
+        window.location.href = "/Pages/login.html";
         return;
     }
 
     // Logout do usuário (não deslogar, mas voltar para a tela inicial correta)
     logoutButton.addEventListener("click", () => {
         if (loggedInUser.role === "catequista") {
-            window.location.href = "/pages/catequista.html"; // Direciona para a página inicial do catequista
+            window.location.href = "/catequista.html"; // Direciona para a página inicial do catequista
         } else if (loggedInUser.role === "aluno") {
-            window.location.href = "/pages/turmainterna.html"; // Direciona para a página inicial do aluno
+            window.location.href = "/turmainterna.html"; // Direciona para a página inicial do aluno
         }
     });
 

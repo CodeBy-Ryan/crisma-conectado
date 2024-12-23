@@ -7,16 +7,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // Verificar se o usuário está logado
     if (!loggedInUser) {
         alert("Acesso restrito! Faça login novamente.");
-        window.location.href = "login.html";
+        window.location.href = "/Pages/login.html";
         return;
     }
 
     // Botão Voltar
     backButton.addEventListener("click", () => {
         if (loggedInUser.role === "catequista") {
-            window.location.href = "/pages/catequista.html";
+            window.location.href = "/catequista.html";
         } else if (loggedInUser.role === "aluno") {
-            window.location.href = "/pages/turmainterna.html";
+            window.location.href = "/turmainterna.html";
         } else {
             alert("Usuário inválido.");
             window.location.href = "/pages/login.html";
