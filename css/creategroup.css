@@ -1,8 +1,10 @@
+/* Página de criação de turma */
 .criar-turma-page {
     padding: 20px;
     font-family: Arial, sans-serif;
 }
 
+/* Seção do formulário e turmas */
 .form-section, .turmas-section {
     margin-bottom: 30px;
     background: #f9f9f9;
@@ -12,12 +14,14 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Títulos das seções */
 .form-section h1, .turmas-section h2 {
     color: #333;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
+/* Estilo do formulário de criação de turma */
 #turmaForm input, #turmaForm textarea, #turmaForm button {
     width: 100%;
     margin-bottom: 15px;
@@ -27,6 +31,7 @@
     font-size: 16px;
 }
 
+/* Botão do formulário */
 #turmaForm button {
     background: #007BFF;
     color: #fff;
@@ -38,12 +43,14 @@
     background: #0056b3;
 }
 
+/* Container de turmas */
 .turmas-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
 }
 
+/* Cartão de turma */
 .turma-card {
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -54,12 +61,14 @@
     padding: 10px;
 }
 
+/* Imagem do cartão de turma */
 .turma-card img {
     width: 100%;
     height: auto;
     border-bottom: 1px solid #ddd;
 }
 
+/* Título e descrição do cartão de turma */
 .turma-card h3 {
     font-size: 18px;
     margin: 10px 0;
@@ -71,6 +80,7 @@
     color: #666;
 }
 
+/* Botão de ação no cartão de turma */
 .turma-card button {
     margin-top: 10px;
     background: #ff4d4d;
@@ -86,6 +96,7 @@
     background: #d33;
 }
 
+/* Estilo do header */
 header {
     background-color: #4A90E2;
     padding: 15px;
@@ -100,6 +111,7 @@ header nav a {
     font-weight: bold;
 }
 
+/* Estilo do botão de deletar */
 .deleteButton {
     background-color: #e63946;
     color: white;

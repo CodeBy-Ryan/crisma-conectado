@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+/* Estilo Geral */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -12,7 +13,7 @@ body {
     color: #333;
 }
 
-/* Estilo do header */
+/* Estilo do Header */
 header {
     background-color: #4CAF50;
     padding: 15px;
@@ -30,7 +31,7 @@ header nav a:hover {
     text-decoration: underline;
 }
 
-/* Estilo principal */
+/* Estilo Principal */
 main {
     max-width: 800px;
     margin: 30px auto;
@@ -40,7 +41,7 @@ main {
     border-radius: 8px;
 }
 
-/* Estilo do título */
+/* Estilo dos Títulos */
 h1 {
     text-align: center;
     color: #4CAF50;
@@ -53,7 +54,7 @@ h2 {
     font-size: 1.2em;
 }
 
-/* Formulário de cadastro */
+/* Formulário de Cadastro */
 form {
     display: flex;
     flex-direction: column;
@@ -80,7 +81,7 @@ input[type="url"]:focus {
     border-color: #4CAF50;
 }
 
-/* Estilo do botão */
+/* Estilo do Botão */
 button[type="submit"] {
     background-color: #4CAF50;
     color: white;
@@ -96,7 +97,7 @@ button[type="submit"]:hover {
     background-color: #45a049;
 }
 
-/* Estilo da lista de grupos cadastrados */
+/* Estilo da Lista de Grupos Cadastrados */
 #groupList {
     margin-top: 20px;
     padding: 10px;
@@ -124,7 +125,7 @@ button[type="submit"]:hover {
     text-decoration: underline;
 }
 
-/* Responsividade para telas pequenas */
+/* Responsividade para Telas Pequenas */
 @media (max-width: 600px) {
     main {
         margin: 20px;
