@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Grupos</title>
+    <link rel="stylesheet" href="/css/gruposdewh.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" id="backButton">Voltar</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Cadastrar Grupos</h1>
+        <form id="createGroupForm">
+            <label for="groupName">Nome do Grupo:</label>
+            <input type="text" id="groupName" required>
+
+            <label for="groupLink">Link do Grupo:</label>
+            <input type="url" id="groupLink" required>
+
+            <button type="submit">Cadastrar Grupo</button>
+        </form>
+
+        <h2>Grupos Cadastrados</h2>
+        <div id="groupList"></div>
+    </main>
+    <script src="/js/create_group.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área Interna do Aluno</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: linear-gradient(120deg, #f5f7fa, #c3cfe2);
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #4A90E2;
+            color: white;
+            padding: 1rem 2rem;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+            font-weight: bold;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .title h1 {
+            font-size: 2.5rem;
+            color: #4A90E2;
+        }
+
+        .section {
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s;
+            margin-bottom: 1rem;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 2px solid #4A90E2;
+        }
+
+        footer {
+            background: #4A90E2;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem 0;
+        }
+
+        .navigation-buttons a {
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1 id="turmaTitle"></h1>
+        </div>
+        <div>
+            <a href="/Pages/editar_perfil.html">Editar Perfil</a>
+            <a href="/Pages/login.html" id="logoutButton">Sair</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="title">
+            <h1 id="welcomeTitle"></h1>
+            <p>Bem-vindo(a) à sua turma! Abaixo, você encontra informações sobre membros, tarefas, eventos e grupos.</p>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation-buttons">
+            <a href="/Pages/chat.html" class="btn">Bate-Papo</a>
+            <a href="/Pages/calendario.html" class="btn">Calendário</a>
+            <a href="/Pages/cadastrargrupos.html" class="btn">Grupos</a>
+        </div>
+
+        <section class="section members">
+            <h2>Membros da Turma</h2>
+            <div id="membersContainer"></div>
+        </section>
+
+        <section class="section tasks">
+            <h2>Tarefas</h2>
+            <div id="tasksContainer"></div>
+        </section>
+
+        <section class="section events">
+            <h2>Eventos</h2>
+            <div id="eventsContainer"></div>
+        </section>
+
+        <section class="section groups">
+            <h2>Grupos</h2>
+            <div id="groupsContainer"></div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Crisma Conectado. Todos os direitos reservados Ryan Rodrigues.</p>
+    </footer>
+    <script src="/js/turmainterna.js"></script>
+</body>
+</html>

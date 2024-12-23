@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamadas - Catequista</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        #saveAttendance {
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #4A90E2;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #saveAttendance:hover {
+            background-color: #4A90E2;
+        }
+        #attendanceHistory .attendanceEntry {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin: 5px 0;
+            background-color: #f9f9f9;
+        }
+        #attendanceHistory .attendanceEntry p {
+            margin: 0;
+        }
+        #attendanceHistory .downloadButton,
+        #attendanceHistory .deleteButton {
+            background-color: #007BFF;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #attendanceHistory .deleteButton {
+            background-color: #FF4136;
+        }
+        #attendanceHistory .downloadButton:hover {
+            background-color: #0056b3;
+        }
+        #attendanceHistory .deleteButton:hover {
+            background-color: #c51f1a;
+        }
+        #filterAttendance {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/Pages/catequista.html" class="btn btn-light">Voltar</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Chamadas - Turma: <span id="turmaName"></span></h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome do Aluno</th>
+                    <th>Presença</th>
+                    <th>Ausência</th>
+                </tr>
+            </thead>
+            <tbody id="studentList"></tbody>
+        </table>
+        <button id="saveAttendance">Salvar Lista</button>
+
+        <h2>Histórico de Chamadas</h2>
+        <input type="text" id="filterAttendance" placeholder="Pesquisar por data (ex: 01/01/2024)">
+        <div id="attendanceHistory"></div>
+    </main>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    </head>
+    
+    <script src="/js/chamadas.js"></script>
+</body>
+</html>

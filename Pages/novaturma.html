@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Nova Turma - Crisma Conectado</title>
+    <link rel="stylesheet" href="css/creategroup.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+                <a href="/Pages/catequista.html" class="btn btn-light">Voltar</a> 
+        </nav>
+    </header>
+
+    <main class="criar-turma-page">
+        <section class="form-section">
+            <h1>Criar Nova Turma</h1>
+            <form id="turmaForm">
+                <label for="nome">Nome da Turma:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" rows="3" required></textarea>
+
+                <label for="imagem">Imagem da Turma:</label>
+                <input type="file" id="imagem" name="imagem" accept="image/*" required>
+
+                <button type="submit">Criar Turma</button>
+            </form>
+        </section>
+
+        <section class="turmas-section">
+            <h2>Turmas Existentes</h2>
+            <div id="turmasContainer" class="turmas-container">
+                <!-- Turmas serão carregadas dinamicamente -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Crisma Conectado. Todos os direitos reservados Ryan Rodrigues.</p>
+        </div>
+    </footer>
+
+    <script src="/js/create_class.js"></script>
+</body>
+</html>
