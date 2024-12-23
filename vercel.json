@@ -1,58 +1,15 @@
 {
   "rewrites": [
     {
-      "source": "/turmainterna",
-      "destination": "/pages/turmainterna.html"
-    },
-    {
-      "source": "/catequista",
-      "destination": "/pages/catequista.html"
-    },
-    {
-      "source": "/about",
-      "destination": "/pages/about.html"
-    },
-
-    {
-"source": "/turma",
-      "destination": "/pages/turma.html"
-
-
-    },
-    
-
-    {
-      "source": "/novaturma",
-      "destination": "/pages/novatuma.html"
-    },
-    {
-      "source": "/editar_perfil",
-      "destination": "/pages/editar_perfil.html"
-    },
-    {
-      "source": "/criareventos",
-      "destination": "/pages/criareventos.html"
-    },
-
-    {
-      "source": "/chat",
-      "destination": "/pages/chat.html"
-    },
-
-    {
-      "source": "/chamadas",
-      "destination": "/pages/chamadas.html"
-    },
-
-    {
-      "source": "/calendario",
-      "destination": "/pages/calendario.html"
-    },
-
-    {
-      "source": "/cadastrargrupos",
-      "destination": "/pages/cadastrargrupos.html"
+      "source": "/pages/(.*)",
+      "destination": "/pages/$1"
     }
-
+  ],
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/index.html",
+      "permanent": true
+    }
   ]
 }
