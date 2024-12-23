@@ -16,13 +16,20 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("profilePicPreview").src = loggedInUser.profilePic;
     }
 
+    // Estiliza a prévia da foto de perfil
+    const profilePicPreview = document.getElementById("profilePicPreview");
+    profilePicPreview.style.width = "150px";
+    profilePicPreview.style.height = "150px";
+    profilePicPreview.style.objectFit = "cover";
+    profilePicPreview.style.borderRadius = "50%";
+
     // Atualiza a foto de perfil ao selecionar um arquivo
     document.getElementById("profilePic").addEventListener("change", (event) => {
         const file = event.target.files[0];
         if (file) {
             const reader = new FileReader();
             reader.onload = function (e) {
-                document.getElementById("profilePicPreview").src = e.target.result;
+                profilePicPreview.src = e.target.result;
             };
             reader.readAsDataURL(file);
         }
@@ -32,9 +39,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("editarPerfilForm").addEventListener("submit", (event) => {
         event.preventDefault();
 
-        const updatedName = document.getElementById("name").value;
-        const updatedPassword = document.getElementById("password").value;
-        const updatedProfilePic = document.getElementById("profilePicPreview").src;
+        const updatedName = document.getElementById("name").value.trim();
+        const updatedPassword = document.getElementById("password").value.trim();
+        const updatedProfilePic = profilePicPreview.src;
+
+        if (!updatedName) {
+            alert("O campo de nome não pode estar vazio.");
+            return;
+        }
 
         // Localiza o índice do usuário no localStorage
         const userIndex = users.findIndex((u) => u.email === loggedInUser.email);
@@ -68,27 +80,16 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("turmas", JSON.stringify(turmas));
 
             alert("Perfil atualizado com sucesso!");
-            window.location.reload(); // Atualiza a página para refletir as mudanças
+            window.location.reload();
         } else {
             alert("Erro ao atualizar perfil. Usuário não encontrado.");
         }
     });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-
-    if (!loggedInUser) {
-        alert("Acesso restrito! Faça login novamente.");
-        window.location.href = "/Pages/login.html";
-        return;
-    }
 
     // Ação do botão "Voltar"
     document.getElementById("backButton").addEventListener("click", (event) => {
         event.preventDefault();
 
-        // Redireciona com base no tipo de usuário
         if (loggedInUser.role === "catequista") {
             window.location.href = "/catequista.html";
         } else if (loggedInUser.role === "aluno") {
@@ -98,7 +99,4 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = "/Pages/login.html";
         }
     });
-
-    // Preenchimento e manipulação do perfil (já presente no código anterior)
-    // ...
 });
