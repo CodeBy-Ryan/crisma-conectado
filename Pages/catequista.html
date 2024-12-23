@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Catequista</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Crisma Conectado - Catequista</div>
+            <ul class="nav-links">
+                <li><a href="/Pages/login.html" id="logoutButton">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="catequista-area">
+        <h1>Bem-vindo, <span id="catequistaName"></span>!</h1>
+        <p>Sua turma: <strong id="catequistaTurma"></strong></p>
+
+        <!-- Botões de navegação -->
+        <section class="actions">
+            <button id="btnListaChamada">Lista de Chamada</button>
+            <button id="btnCriarEvento">Criar Evento</button>
+            <button id="btnBatePapo">Bate-Papo</button>
+            <button id="btnNovaTurma">Cadastrar Turma</button>
+            <button id="btnCadastrarGrupos">Grupos</button>
+            <button id="btnEditarPerfil">Editar Perfil</button>
+        </section>
+
+        <!-- Lista de alunos da turma -->
+        <section id="alunos">
+            <h2>Alunos da Turma</h2>
+            <div id="alunosContainer">
+                <p>Carregando alunos...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Crisma Conectado. Todos os direitos reservados Ryan Rodrigues.</p>
+    </footer>
+
+    <script src="/js/catequista.js"></script>
+</body>
+</html>

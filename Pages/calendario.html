@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário - Crisma Conectado</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f8fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1e3a5f;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .calendar-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .calendar-header button {
+            padding: 8px 15px;
+            background-color: #2a9d8f;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .calendar-header button:hover {
+            background-color: #21867a;
+        }
+
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+
+        .day {
+            padding: 15px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .day:hover {
+            background: #e8f0fe;
+        }
+
+        .day.event {
+            background-color: #2a9d8f;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calendário de Encontros</h1>
+    </header>
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <button id="prevMonth">&laquo; Anterior</button>
+            <h2 id="currentMonth">Janeiro 2025</h2>
+            <button id="nextMonth">Próximo &raquo;</button>
+        </div>
+        <div class="calendar-days">
+            <div>Dom</div>
+            <div>Seg</div>
+            <div>Ter</div>
+            <div>Qua</div>
+            <div>Qui</div>
+            <div>Sex</div>
+            <div>Sáb</div>
+        </div>
+        <div class="calendar-grid" id="calendarDays"></div>
+        <a href="/Pages/turmainterna.html" class="btn btn-light">Voltar</a>
+    </div>
+
+    <!-- Modal para exibir detalhes do evento -->
+    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eventModalLabel">Detalhes do Evento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <h5 id="modalEventTitle"></h5>
+                    <p id="modalEventDescription"></p>
+                    <p><strong>Data:</strong> <span id="modalEventDate"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const calendarDays = document.getElementById('calendarDays');
+        const currentMonth = document.getElementById('currentMonth');
+        const prevMonth = document.getElementById('prevMonth');
+        const nextMonth = document.getElementById('nextMonth');
+        const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+        const turmaEvents = JSON.parse(localStorage.getItem("eventsData"))?.[loggedInUser?.turma] || [];
+
+        let currentYear = new Date().getFullYear();
+        let currentMonthIndex = new Date().getMonth();
+
+        const renderCalendar = () => {
+            calendarDays.innerHTML = '';
+            const daysInMonth = new Date(currentYear, currentMonthIndex + 1, 0).getDate();
+            const firstDay = new Date(currentYear, currentMonthIndex, 1).getDay();
+
+            currentMonth.textContent = new Date(currentYear, currentMonthIndex).toLocaleDateString('pt-BR', {
+                month: 'long',
+                year: 'numeric',
+            });
+
+            for (let i = 0; i < firstDay; i++) {
+                const emptyDiv = document.createElement('div');
+                calendarDays.appendChild(emptyDiv);
+            }
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayDiv = document.createElement('div');
+                dayDiv.classList.add('day');
+                dayDiv.textContent = day;
+
+                const date = new Date(currentYear, currentMonthIndex, day).toISOString().split('T')[0];
+                const event = turmaEvents.find(event => event.date === date);
+
+                if (event) {
+                    dayDiv.classList.add('event');
+                    dayDiv.addEventListener('click', () => showEventDetails(event));
+                }
+
+                calendarDays.appendChild(dayDiv);
+            }
+        };
+
+        const showEventDetails = (event) => {
+            document.getElementById('modalEventTitle').textContent = event.title;
+            document.getElementById('modalEventDescription').textContent = event.description;
+            document.getElementById('modalEventDate').textContent = event.date;
+            const modal = new bootstrap.Modal(document.getElementById('eventModal'));
+            modal.show();
+        };
+
+        prevMonth.addEventListener('click', () => {
+            currentMonthIndex = (currentMonthIndex - 1 + 12) % 12;
+            if (currentMonthIndex === 11) currentYear--;
+            renderCalendar();
+        });
+
+        nextMonth.addEventListener('click', () => {
+            currentMonthIndex = (currentMonthIndex + 1) % 12;
+            if (currentMonthIndex === 0) currentYear++;
+            renderCalendar();
+        });
+
+        renderCalendar();
+    </script>
+</body>
+</html>

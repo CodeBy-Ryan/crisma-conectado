@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil - Crisma Conectado</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="bg-dark text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h3">Editar Perfil</h1>
+            <a href="#" id="backButton" class="btn btn-light">Voltar</a>
+        </div>
+    </header>
+
+    <main class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form id="editarPerfilForm">
+                    <div class="mb-3 text-center">
+                        <label for="profilePic" class="form-label">Foto de Perfil</label>
+                        <div>
+                            <img src="https://via.placeholder.com/150" id="profilePicPreview" class="rounded-circle mb-2" alt="Foto de Perfil">
+                            <input type="file" id="profilePic" class="form-control" accept="image/*">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nome</label>
+                        <input type="text" id="name" class="form-control" placeholder="Seu nome completo">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" id="email" class="form-control" placeholder="Seu e-mail" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Nova Senha</label>
+                        <input type="password" id="password" class="form-control" placeholder="Digite sua nova senha">
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-3 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2024 Crisma Conectado - Todos os direitos reservados Ryan Rodrigues.</p>
+        </div>
+    </footer>
+
+    <script src="/js/editar-perfil.js"></script>
+</body>
+</html>

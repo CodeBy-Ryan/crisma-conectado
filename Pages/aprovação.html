@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Administração - Crisma Conectado</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Crisma Conectado</div>
+            <ul class="nav-links">
+                <li><a href="/Pages/index.html">Início</a></li>
+                <li><a href="/Pages/login.html" id="logoutButton">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="admin-panel">
+        <section class="users-section">
+            <h1>Gerenciamento de Usuários</h1>
+
+            <!-- Campo de pesquisa -->
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Pesquisar por nome ou email..." />
+            </div>
+
+            <!-- Tabs para alternar entre alunos e catequistas -->
+            <div class="tabs">
+                <button class="tab-button active" data-tab="alunos">Alunos</button>
+                <button class="tab-button" data-tab="catequistas">Catequistas</button>
+            </div>
+
+            <!-- Lista de alunos -->
+            <div class="tab-content active" id="alunos">
+                <h2>Alunos Cadastrados</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Turma</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="alunosTable">
+                        <!-- Dados dos alunos serão carregados dinamicamente -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Lista de catequistas -->
+            <div class="tab-content" id="catequistas">
+                <h2>Catequistas Cadastrados</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Turma</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="catequistasTable">
+                        <!-- Dados dos catequistas serão carregados dinamicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Crisma Conectado. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="/js/aprovação.js"></script>
+</body>
+</html>

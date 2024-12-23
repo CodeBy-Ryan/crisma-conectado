@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Crisma</title>
+    <link rel="stylesheet" href="/css/chat.css">
+</head>
+<body>
+    <main>
+        <h1>Chat Crisma</h1>
+        
+        <div id="postsList"></div>
+
+        <div id="messageInputContainer">
+            <textarea id="messageInput" placeholder="Digite sua mensagem..." rows="3"></textarea>
+            
+            <div class="actionButtons">
+                <input type="file" id="fileInput" accept="image/*,video/*,audio/*" />
+                
+                
+                <button id="sendButton">Enviar</button>
+            </div>
+        </div>
+    </main>
+
+    <button id="logoutButton">Sair</button>
+
+    <script src="/js/chat.js"></script>
+</body>
+</html>
