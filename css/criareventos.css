@@ -1,3 +1,4 @@
+
 /* Estilo Geral */
 body {
     font-family: 'Arial', sans-serif;
@@ -7,7 +8,6 @@ body {
     color: #333;
 }
 
-/* Estilo do Header */
 header {
     background-color: #4A90E2;
     padding: 15px;
@@ -22,7 +22,6 @@ header nav a {
     font-weight: bold;
 }
 
-/* Estilo Principal */
 main {
     max-width: 800px;
     margin: 20px auto;
@@ -32,7 +31,6 @@ main {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo dos Títulos */
 h1, h2 {
     color: #333;
     text-align: center;
@@ -41,7 +39,6 @@ h1, h2 {
     font-weight: bold;
 }
 
-/* Estilo do Formulário */
 form {
     display: flex;
     flex-direction: column;
